@@ -209,3 +209,25 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/100minutes/submission.git
    a0f3e9c..b4f43bf  master -> master
 Everything up-to-date
+
+ysd@20191222PC:~/coding$ git init
+Reinitialized existing Git repository in /home/ysd/coding/.git/
+ysd@20191222PC:~/coding$ cp -i /mnt/c/Users/hiro-/Desktop/local/FirstGitHub.txt ~/coding/FirstGitHub.txt
+ysd@20191222PC:~/coding$ git fetch
+ysd@20191222PC:~/coding$ git add FirstGitHub.txt
+ysd@20191222PC:~/coding$ git commit
+[master ac0dd11] もう一回
+ 1 file changed, 211 insertions(+)
+ create mode 100755 FirstGitHub.txt
+ysd@20191222PC:~/coding$ git rebase --rebase-merges
+Successfully rebased and updated refs/heads/master.
+ysd@20191222PC:~/coding$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.51 KiB | 513.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/100minutes/submission.git
+   b4f43bf..ac0dd11  master -> master
+Everything up-to-date
