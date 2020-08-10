@@ -105,6 +105,9 @@ ysd@20191222PC:~/coding$ git tag -a "構造体" e9e25bc -m "タグ1"
 ysd@20191222PC:~/coding$ git tag -a "順列" 0271acd -m "タグ2"
 ysd@20191222PC:~/coding$ git tag -a "使い方" 33edde6 -m "タグ3"
 ysd@20191222PC:~/coding$ git tag -a "ローカル" a0f3e9c -m "タグ4"
+ysd@20191222PC:~/coding$ git tag -d "使い方"
+Deleted tag '使い方' (was 6f01db3)
+ysd@20191222PC:~/coding$ git tag -a "使い方" 6d58e05 -m "タグ3"
 ysd@20191222PC:~/coding$ git push origin --tags
 Enumerating objects: 4, done.
 Counting objects: 100% (4/4), done.
