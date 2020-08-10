@@ -1,0 +1,54 @@
+/*
+ABC152E_Flatten
+N個の正の整数列Aに対し、1≤i<j≤Nを満たす全てのi,jについて、Ai*Bi=Aj*Bjが成り立つ様な
+数列Bの全項の総和の最小値を(10^9+7)の剰余で出力。
+入力例
+3
+1000000 999999 999998
+出力例
+996989508
+*/
+#include<stdio.h>
+#pragma GCC optimize("O3")
+#pragma GCC target("avx")
+#define rep(i,N) for(int i=0;i<(int)N;i++)
+const int MOD=1e9+7,MAX=1e6;
+static inline int IN(void)
+{
+  int x=0,f=0,c=getchar();while(c<48||c>57){f^=c==45,c=getchar();}
+  while(c>47&&c<58){x=x*10+c-48,c=getchar();}return f?-x:x;
+}
+typedef struct{int SPF[1000001];int Primes[168];int sz;}Template;
+struct T{int fact[1000001],inv[1000001];};
+Template P;struct T MODINV;
+static inline int MPow(int a,int b){return b?1l*MPow(1l*a*a%MOD,b>>1)*(b&1?a:1)%MOD:1;}
+static inline void ready(void)
+{
+  *P.SPF=1,*P.Primes=2,P.sz=1;
+  rep(i,MAX/2)P.SPF[2*(i+1)]=2,P.SPF[2*(i+1)-1]=2*(i+1)-1;
+  rep(i,MAX/2-1)
+  {
+    int x=2*(i+1)+1;if(P.SPF[x]==x){P.Primes[P.sz++]=x;}if(x*x>MAX)break;
+    rep(j,P.sz){if(P.Primes[j]<=P.SPF[x]&&x*P.Primes[j]<=MAX)P.SPF[x*P.Primes[j]]=P.Primes[j];else break;}
+  }
+}
+static inline void init(void)
+{
+  MODINV.fact[0]=1;rep(i,MAX)MODINV.fact[i+1]=1l*MODINV.fact[i]*(i+1)%MOD;
+  MODINV.inv[MAX]=MPow(MODINV.fact[MAX],MOD-2);
+  rep(i,MAX)MODINV.inv[MAX-1-i]=1l*MODINV.inv[MAX-i]*(MAX-i)%MOD;
+}
+int main(void)
+{
+  int N=IN(),A=0,flag=0,invsum=0,lcm=1,p=0,x=0,box[168]={0},unique[9999];
+  ready();init();
+  rep(i,N)
+  {
+    A=IN();invsum=(invsum+1l*MODINV.fact[A-1]*MODINV.inv[A]%MOD)%MOD;
+    rep(j,P.sz){x=0;while(A%P.Primes[j]==0){A/=P.Primes[j];if(box[j]<++x)box[j]=x;}}
+    if(A!=1){rep(j,p){if(unique[j]==A)flag=1;continue;}if(!flag)unique[p++]=A;}flag=0;
+  }
+  rep(i,P.sz){rep(j,box[i]){lcm=1l*lcm*P.Primes[i]%MOD;}}
+  rep(i,p){lcm=1l*lcm*unique[i]%MOD;}
+  return printf("%ld\n",1l*lcm*invsum%MOD),0;
+}
