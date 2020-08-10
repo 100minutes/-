@@ -173,3 +173,24 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/100minutes/submission.git
    effd98f..e92da47  master -> master
 Everything up-to-date
+<<<<<<< HEAD:試行錯誤/FirstGitHub.txt
+=======
+
+ysd@20191222PC:~/coding$ git tag -a "構造体" e9e25bc -m "タグ1"
+ysd@20191222PC:~/coding$ git tag -a "順列" 0271acd -m "タグ2"
+ysd@20191222PC:~/coding$ git tag -a "使い方" 33edde6 -m "タグ3"
+ysd@20191222PC:~/coding$ git tag -a "ローカル" a0f3e9c -m "タグ4"
+ysd@20191222PC:~/coding$ git push origin --tags
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 639 bytes | 71.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/100minutes/submission.git
+ * [new tag]         ローカル -> ローカル
+ * [new tag]         使い方 -> 使い方
+ * [new tag]         構造体 -> 構造体
+ * [new tag]         順列 -> 順列
+Everything up-to-date
+>>>>>>> d0dae3f... タグ付け:FirstGitHub.txt
