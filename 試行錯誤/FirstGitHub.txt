@@ -49,9 +49,10 @@ ysd@20191222PC:~$ git config --global core.autocrlf false
 ysd@20191222PC:~$ git config --global core.ignorecase false
 ysd@20191222PC:~$ git config --global core.quotepath false
 ysd@20191222PC:~$ git config --global credential.helper 'cache --timeout=86400'
+ysd@20191222PC:~$ git config --global fetch.prune true
 ysd@20191222PC:~$ git config --global push.default current
 
-ysd@20191222PC:~$ cat ~/.gitconfig
+ysd@20191222PC:~/coding$ cat ~/.gitconfig
 [core]
         repositoryformatversion = 0
         filemode = true
@@ -67,9 +68,6 @@ ysd@20191222PC:~$ cat ~/.gitconfig
 [branch "master"]
         remote = origin
         merge = refs/heads/master
-[branch "AtCoder"]
-        remote = origin
-        merge = refs/heads/AtCoder
 [user]
         name = 100minutes
         email = 0o1l2z3m4f5s6a7r8e9g@gmail.com
@@ -79,6 +77,8 @@ ysd@20191222PC:~$ cat ~/.gitconfig
         ui = true
 [credential]
         helper = cache --timeout=86400
+[fetch]
+        prune = true
 
 ysd@20191222PC:~/coding$ git fetch
 remote: Enumerating objects: 6, done.
