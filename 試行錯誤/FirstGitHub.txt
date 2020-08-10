@@ -212,22 +212,20 @@ Everything up-to-date
 
 ysd@20191222PC:~/coding$ git init
 Reinitialized existing Git repository in /home/ysd/coding/.git/
-ysd@20191222PC:~/coding$ cp -i /mnt/c/Users/hiro-/Desktop/local/FirstGitHub.txt ~/coding/FirstGitHub.txt
-ysd@20191222PC:~/coding$ git fetch
-ysd@20191222PC:~/coding$ git add FirstGitHub.txt
-ysd@20191222PC:~/coding$ git commit
-[master ac0dd11] もう一回
- 1 file changed, 211 insertions(+)
- create mode 100755 FirstGitHub.txt
-ysd@20191222PC:~/coding$ git rebase --rebase-merges
-Successfully rebased and updated refs/heads/master.
-ysd@20191222PC:~/coding$ git push
-Enumerating objects: 4, done.
-Counting objects: 100% (4/4), done.
+ysd@20191222PC:~/coding$ cp -i /mnt/c/Users/hiro-/Desktop/local/FirstGitHub.txt ~/coding/試行錯誤/FirstGitHub.txt
+cp: '/home/ysd/coding/試行錯誤/FirstGitHub.txt' を上書きしますか? y
+ysd@20191222PC:~/coding$ git add 試行錯誤/FirstGitHub.txt
+ysd@20191222PC:~/coding$ git commit -m "letsgo!"
+[master 53c00bb] letsgo!
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+ysd@20191222PC:~/coding$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
 Delta compression using up to 2 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 2.51 KiB | 513.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 435 bytes | 87.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/100minutes/submission.git
-   b4f43bf..ac0dd11  master -> master
+   18bbec1..53c00bb  master -> master
 Everything up-to-date
