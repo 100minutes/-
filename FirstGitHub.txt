@@ -108,3 +108,37 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/100minutes/submission.git
    13d63d4..54d84fe  master -> master
 Everything up-to-date
+
+ysd@20191222PC:~$ cd coding
+ysd@20191222PC:~/coding$ cp -i /mnt/c/Users/hiro-/Desktop/local/FirstGitHub.txt ~/coding/FirstGitHub.txt
+ysd@20191222PC:~/coding$ git init
+Initialized empty Git repository in /home/ysd/coding/.git/
+ysd@20191222PC:~/coding$ git add FirstGitHub.txt
+ysd@20191222PC:~/coding$ git fetch
+ysd@20191222PC:~/coding$ git commit -m "WindowsDesktopからコピー"
+[master 1783cf8] WindowsDesktopからコピー
+ 1 file changed, 110 insertions(+)
+ create mode 100755 FirstGitHub.txt
+ysd@20191222PC:~/coding$ git rebase --preserve-merges
+warning: git rebase --preserve-merges is deprecated. Use --rebase-merges instead.
+Successfully rebased and updated refs/heads/master.
+ysd@20191222PC:~/coding$ git push
+Username for 'https://github.com': 100minutes
+Password for 'https://100minutes@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.68 KiB | 171.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/100minutes/submission.git
+   1d27db3..02fcd94  master -> master
+Everything up-to-date
+ysd@20191222PC:~/coding$ cp -i /mnt/c/Users/hiro-/Desktop/local/FirstGitHub.txt ~/coding/FirstGitHub.txt
+cp: '/home/ysd/coding/FirstGitHub.txt' を上書きしますか? y
+ysd@20191222PC:~/coding$ git branch -a
+* master
+  remotes/origin/AtCoder
+  remotes/origin/master
+ysd@20191222PC:~/coding$ git commit --allow-empty -m "空更新含む"
+[master 3bc409e] 空更新含む
